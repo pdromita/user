@@ -1,7 +1,6 @@
 <h1>Gestione utenti - Home modulo</h1>
 <p>Benvenuto nel modulo utenti.</p>
-<p>Da qui puoi gestire gli utenti del sistema.</p>
-<p>Da qui puoi gestire gli utenti del sistema.</p>
+<p>Puoi effettuare le seguenti operazioni:</p>
 
 <ul>
 <li><?= \yii\helpers\Html::a('Login', ['login']) ?></li>
