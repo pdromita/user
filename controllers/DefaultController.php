@@ -164,6 +164,23 @@ class DefaultController extends Controller
             'model' => $model
         ]);
     }
+
+    public function actionListuser()
+    {
+        $model = new \app\modules\user\models\User();
+
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => $model->find(),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
+
+        return $this->render('listuser', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
 }
 
 

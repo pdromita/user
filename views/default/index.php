@@ -6,4 +6,5 @@
 <li><?= \yii\helpers\Html::a('Login', ['login']) ?></li>
 <li><?= \yii\helpers\Html::a('Registrazione', ['signup']) ?></li>
 <li><?= \yii\helpers\Html::a('Reset password', ['request-password-reset']) ?></li>
+<li><?= \yii\helpers\Html::a('Lista utenti', ['listuser']) ?></li>
 </ul>
