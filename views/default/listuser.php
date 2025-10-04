@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $users app\modules\user\models\User[] */
+
 
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -16,9 +16,12 @@ echo gridview::widget([
         'username',
         'email:email',
         'status',
+        // 'auth_key',
+        'password_reset_token',
         'created_at:datetime',
         'updated_at:datetime',
 
         ['class' => 'yii\grid\ActionColumn'],
     ],
 ]);
+

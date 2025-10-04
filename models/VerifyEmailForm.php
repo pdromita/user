@@ -1,7 +1,7 @@
 <?php
 
 namespace pdromita\user\models;
-use app\modules\user\models\User;
+use pdromita\user\models\User;
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
 

@@ -3,7 +3,7 @@
 namespace pdromita\user\models;
 
 use Yii;
-use app\modules\user\models\User;
+use pdromita\user\models\User;
 use yii\base\Model;
 
 class ResendVerificationEmailForm extends Model
@@ -24,7 +24,7 @@ class ResendVerificationEmailForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'exist',
-                'targetClass' => 'app\modules\user\models\User',
+                'targetClass' => 'pdromita\user\models\User',
                 'filter' => ['status' => User::STATUS_INACTIVE],
                 'message' => 'There is no user with this email address.'
             ],
@@ -50,7 +50,7 @@ class ResendVerificationEmailForm extends Model
         return Yii::$app
             ->mailer
             ->compose(
-                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
+                ['html' => '@pdromita/user/mail/emailVerify-html', 'text' => '@pdromita/user/mail/emailVerify-text'],
                 ['user' => $user]
             )
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])

@@ -2,12 +2,13 @@
 namespace pdromita\user\controllers;
 
 use Yii;
-use app\modules\user\models\LoginForm;
-use app\modules\user\models\PasswordResetRequestForm;
-use app\modules\user\models\ResetPasswordForm;
-use app\modules\user\models\SignupForm;
-use app\modules\user\models\VerifyEmailForm;
-use app\modules\user\models\ResendVerificationEmailForm;
+use pdromita\user\models\LoginForm;
+use pdromita\user\models\PasswordResetRequestForm;
+use pdromita\user\models\ResetPasswordForm;
+use pdromita\user\models\SignupForm;
+use pdromita\user\models\VerifyEmailForm;
+use pdromita\user\models\ResendVerificationEmailForm;
+use pdromita\user\models\User;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -167,7 +168,7 @@ class DefaultController extends Controller
 
     public function actionListuser()
     {
-        $model = new \app\modules\user\models\User();
+        $model = new User();
 
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $model->find(),

@@ -5,7 +5,7 @@ namespace pdromita\user\models;
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
 use Yii;
-use common\models\User;
+use pdromita\user\models\User;
 
 /**
  * Password reset form

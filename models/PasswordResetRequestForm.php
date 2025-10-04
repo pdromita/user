@@ -4,7 +4,7 @@ namespace pdromita\user\models;
 
 use Yii;
 use yii\base\Model;
-use common\models\User;
+use pdromita\user\models\User;
 
 /**
  * Password reset request form
@@ -24,7 +24,7 @@ class PasswordResetRequestForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'exist',
-                'targetClass' => '\common\models\User',
+                'targetClass' => 'pdromita\user\models\User',
                 'filter' => ['status' => User::STATUS_ACTIVE],
                 'message' => 'There is no user with this email address.'
             ],
@@ -58,8 +58,11 @@ class PasswordResetRequestForm extends Model
         return Yii::$app
             ->mailer
             ->compose(
-                ['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text'],
-                ['user' => $user]
+            [
+                'html' => '@pdromita/user/mail/passwordResetToken-html',
+                'text' => '@pdromita/user/mail/passwordResetToken-text'
+            ],
+            ['user' => $user]
             )
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
             ->setTo($this->email)
